@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta http-equiv="refresh" content="5;"> <!--Tag para recarregar a tela do navegador automaticamente-->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <title>Meu primeiro programa...</title>
+
+    <style>
+        body {
+            background-color: rgb(99, 99, 157); /*Comentário em css só funciona barra asterisco*/
+            color: white;
+            font:normal 20pt Arial;
+        }
+        h1{
+            color:rgb(241, 208, 22)
+        }
+    </style>
+</head>
+<body>
+    <h1>Olá, mundo!</h1>
+    <p>Já me livrei da maldição</p>
+
+    <script>
+       /*O window.prompt retorna uma string
+         portanto é preciso converter o número digitado de string para número.*/
+
+        //Solução-01 - Armazena o número já convertido
+       var n1 = Number.parseInt(window.prompt("Solução-01: Digite um número: "));
+       var n2 = Number.parseInt(window.prompt("Solução-01: Digite outro número: ")) ;
+       var soma = n1 + n2;
+       //Concatenando usando o sinal de +.
+       window.alert("Solução-01: A soma entre " + n1 + " e " + n2 + " é = " + soma)
+        //---------------------------------------
+
+       //Solução-02 - Armazena uma string e a conversão é feita na soma dos números
+
+       var n1 = window.prompt("Solução-02: Digite um número: ");
+       var n2 = window.prompt("Solução-02: Digite outro número: ");
+       var soma = Number.parseInt(n1) + Number.parseInt(n2);
+       window.alert("Solução-02: A soma dos valores é = " + soma)
+       //----------------------------------------
+
+       //Solução-03 - Nas versões mais novas do EcmaScript basta colocar apenas o Number e ele infere (identifica) se é número Inteiro ou Float
+
+       var n1 = Number(window.prompt("Solução-03: Digite um número: "));
+       var n2 = Number(window.prompt("Solução-03: Digite outro número: ")) ;
+       var soma = n1 + n2;
+       //Concatenando com placeholder.
+       window.alert(`Solução-03: A soma entre ${n1} e ${n2} é = ${soma}`)
+       //----------------------------------------
+
+       //Solução-04 - Soma os valores individuais (n1 + n2)  
+       window.alert("Solução-04: Soma os valores individuais (n1 + n2) é = " + (n1 + n2));
+       //----------------------------------------
+
+       //Solução-05 - Para converter de número Inteiro ou Float para string
+     
+       window.alert("Solução-05: Opção toString() - Concatena os valores: " + n1.toString() + n2.toString());
+       window.alert("Solução-05: Opção String() - Concatena os valores: " + String(n1) + String(n2)); 
+
+    </script>
+</body>
+</html>

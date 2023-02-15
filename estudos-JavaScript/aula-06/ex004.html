@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br"
+<head>
+    <!--<meta http-equiv="refresh" content="5;"> Tag para recarregar a tela do navegador automaticamente-->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <title>ex004-Trabalhando com Strings...</title>
+
+    <style>
+        body {
+            background-color: rgb(99, 157, 122); /*Comentário em css só funciona barra asterisco*/
+            color: white;
+            font:normal 15pt Arial;
+        }
+        h1{
+            color:rgb(241, 208, 22)
+        }
+    </style>
+</head>
+<body>
+
+    <script>
+        
+        document.write("<h3> Manipulando strings</h3>")
+
+        var nome = window.prompt('Digite seu nome.')
+
+        document.write(`Olá, <strong>${nome}</strong>! Seu nome tem ${nome.length} letras<br>`)
+
+        document.write(`Seu nome em maiúsculas é <strong>${nome.toUpperCase()}</strong> <br>`)
+        document.write(`Seu nome em minúsculas é <strong>${nome.toLowerCase()}</strong><hr>`)
+        //-----------------------------------------------------------------------
+
+        document.write("<h3>Formatando números</h3>")
+        
+        var salario = 1545.5
+        document.write(`${salario.toFixed(2)} - Método toFixed() fixa 02 casas decimais<br/><hr>`)
+
+        document.write(`${salario.toFixed(2).replace('.', ',')} - Método replace() substitui ponto por vírgula<br/><hr>`)
+
+        document.write(`${salario.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})} - Método toLocaleString('pt-br') - Insere tipo moeda, separa os milhares com ponto e os centavos por vírgula<br/><hr>`)
+
+        document.write(`${salario.toLocaleString('en', {style: 'currency', currency: 'USD'})} - Método toLocaleString('en') - Insere tipo moeda, separa os milhares com VÍRGULA e os centavos por PONTO<br/><hr>`)
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+   <meta http-equiv="refresh" content="1;">  <!--Tag para recarregar a tela do navegador automaticamente-->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex005.html-Primeiros passos com o DOM</title>
+    <style>
+        body {
+            background-color: rgb(61, 129, 184);            
+            color: white;
+            font:normal 15pt Arial;
+        }
+        h2{
+            color:rgb(225, 210, 111)
+        }
+    </style>
+</head>
+<body>
+    <H2>Iniciando estudos de Dom</H2>
+    <p>Aqui vai o resultado</p>
+    <p>Aprendendo a usar o <strong>DOM</strong> em JavaScript.<hr></p>
+    <div id="msg">Clique em mim</div>
+    <div name="msg2">Clique de novo</div>
+    <div class="msg3">Clique mais uma vez</div>
+    <hr>
+    <script>
+        //Mostra na tela o caminho do arquivo
+        window.document.write(window.document.URL)
+        //-------------------------------------------------------
+
+        //Selecionando o elemento pela tag
+        //Variáveis que vão armazerar a tag e o respectivo índice
+        var par0 = window.document.getElementsByTagName('p')[0];
+        var par1 = window.document.getElementsByTagName("p")[1];
+        //-------------------------------------------------------
+
+        //Mostra uma linha na tela com a tag 'horizontal row'
+        document.write("<hr>");
+        //-------------------------------------------------------
+
+        /*O innerText imprime o texto sem as configurações 
+        de estilo que está dentro da variável par1.*/
+        window.document.write('Esta escrito assim: ' + par0.innerText);
+        document.write("<hr>"); 
+        document.write(par1.innerText);
+        document.write("<hr>");
+        //-------------------------------------------------------
+
+        /*O innerHTML imprime o texto COM as configurações 
+        de estilo que está dentro da variável par2. Neste 
+        caso a palavra DOM esta em NEGRITO (strong)*/
+        document.write(par0.innerHTML);
+        //-------------------------------------------------------
+
+        //window.alert(par1.innerText) - //Este alert funciona
+        //-------------------------------------------------------
+
+        //Muda a cor da variável para vermelho
+        par0.style.color = 'red'; 
+
+        //Aumenta o tamanho da fonte
+        par0.style.fontSize = "xx-large";
+        
+        //Muda o estilo da fonte para itálico
+        par0.style.fontStyle = "italic";
+
+        //Muda a cor da tela 
+        var corpo = window.document.body;
+        corpo.style.backgroundColor = "purple";
+        //-------------------------------------------------------
+        
+        //Selecionando o elemento pelo 'id'
+        var d0 = window.document.getElementById('msg');
+        d0.style.background = 'green';
+
+        //O texto 'Clique em mim' da div 'aviso'  pode ser mudado conforme os dois modos abaixo.
+        //d0.innerText = 'Estou aguardando...';
+        //window.document.getElementById('msg').innerText = 'Estou aguardando...';
+        //-------------------------------------------------------
+
+        //Selecionando o elemento pelo 'ByName'.
+        var d1 = window.document.getElementsByName('msg2')[0]
+        d1.style.background = 'red';
+        d1.innerText = 'Você clicou de novo...';
+        //-------------------------------------------------------
+
+        //Selecionando o elemento pelo 'ByClass'.
+        var d1 = window.document.getElementsByClassName('msg3')[0]
+        d1.style.background = 'blue';
+        d1.innerText = 'Você clicou outra vez...';
+        //-------------------------------------------------------
+
+        /*Selecionando o elemento pelo 'querySelector'.
+          Quando a div é um 'name' usa-se '#' hashtag.
+          Quando a div é uma 'class' usa-se '.' ponto.*/
+        var d2 = window.document.querySelector('div#msg');
+        d2.style.color = 'black';
+
+        var d3 = window.document.querySelector('div.msg3');
+        d3.style.fontStyle = "italic";
+        d3.style.fontSize = "xx-large";;
+
+    </script>
+</body>
+</html>
