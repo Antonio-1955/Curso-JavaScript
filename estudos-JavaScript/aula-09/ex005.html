@@ -20,7 +20,8 @@
 <body>
     <H2>Iniciando estudos de Dom</H2>
     <p>Aqui vai o resultado</p>
-    <p>Aprendendo a usar o <strong>DOM</strong> em JavaScript.<hr></p>
+    <p>Aprendendo a usar o <strong>DOM</strong> em JavaScript.</p>
+    <hr>
     <div id="msg">Clique em mim</div>
     <div name="msg2">Clique de novo</div>
     <div class="msg3">Clique mais uma vez</div>
@@ -34,6 +35,7 @@
         //Variáveis que vão armazerar a tag e o respectivo índice
         var par0 = window.document.getElementsByTagName('p')[0];
         var par1 = window.document.getElementsByTagName("p")[1];
+        //window.alert(par1.innerHTML)
         //-------------------------------------------------------
 
         //Mostra uma linha na tela com a tag 'horizontal row'
@@ -44,7 +46,7 @@
         de estilo que está dentro da variável par1.*/
         window.document.write('Esta escrito assim: ' + par0.innerText);
         document.write("<hr>"); 
-        document.write(par1.innerText);
+        document.write(par1.innerHTML);
         document.write("<hr>");
         //-------------------------------------------------------
 
@@ -68,7 +70,7 @@
 
         //Muda a cor da tela 
         var corpo = window.document.body;
-        corpo.style.backgroundColor = "purple";
+        corpo.style.backgroundColor = "black";
         //-------------------------------------------------------
         
         //Selecionando o elemento pelo 'id'
@@ -96,11 +98,12 @@
           Quando a div é um 'name' usa-se '#' hashtag.
           Quando a div é uma 'class' usa-se '.' ponto.*/
         var d2 = window.document.querySelector('div#msg');
-        d2.style.color = 'black';
+        d2.style.color = 'blue';
+        d2.style.background="white"
 
         var d3 = window.document.querySelector('div.msg3');
         d3.style.fontStyle = "italic";
-        d3.style.fontSize = "xx-large";;
+        d3.style.fontSize = "xx-large";
 
     </script>
 </body>
